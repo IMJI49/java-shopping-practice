@@ -26,4 +26,12 @@ public class User {
     public String getPassword() {
         return password;
     }
+    // 유효성 검증 메소드 추가
+    public boolean isValid() {
+        return id != null && !id.isEmpty() &&
+               password != null && !password.isEmpty() &&
+               name != null && !name.isEmpty() &&
+               email != null && !email.isEmpty()
+               && password.length() >= 6; // 비밀번호는 최소 6자 이상
+    }
 }
